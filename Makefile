@@ -1,6 +1,7 @@
 all: build
 
 build:
+	git submodule update
 	docker build -t tbamud:latest .
 
 start:

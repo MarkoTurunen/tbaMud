@@ -12,11 +12,15 @@ RUN ./configure && \
         cd src && \
         touch .accepted && \
         make clean && \
-        make
+        make -j8
 
 FROM ubuntu:noble
 WORKDIR /tbamud
-COPY --from=build /tbamud .
+# Copy only the specific directories from the build stage
+COPY --from=build /tbamud/bin ./bin
+COPY --from=build /tbamud/log ./log
+COPY --from=build /tbamud/lib ./lib
+COPY --from=build /tbamud/autorun.sh ./
 EXPOSE 4000
 VOLUME /tbamud/lib
 CMD [ "./autorun.sh" ]
