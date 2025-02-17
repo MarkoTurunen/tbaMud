@@ -1,17 +1,17 @@
-# circlemud
-Circle MUD 3.1 Docker Image
+# tbaMUD
+tba MUD Docker Image
 
 ## Building
 ```bash
-docker build -t circlemud:3.1 .
+docker build -t tbamud:latest .
 ```
 
 ## Running
 ```bash
-docker run -d --rm -v circlemud-data:/circle-3.1/lib --name circlemud -p 4000:4000 circlemud:3.1
+docker run -d --rm -v circlemud-data:/tbamud/lib --name tbamud -p 4000:4000 tbamud:latest
 ```
 
-## Accessing Circle MUD
+## Accessing tba MUD
 ```bash
 telnet localhost 4000
 ```
