@@ -1,0 +1,3 @@
+[submodule "tbamud"]
+	path = tbamud
+	url = https://github.com/tbamud/tbamud.git

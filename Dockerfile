@@ -1,12 +1,12 @@
-FROM ubuntu:bionic AS build
+FROM ubuntu:noble AS build
 RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
         autoconf \
         automake \
         build-essential
 
-WORKDIR /circle-3.1
-ADD circle-3.1 .
+WORKDIR /tbamud
+ADD tbamud .
 
 RUN ./configure && \
         cd src && \
@@ -14,9 +14,9 @@ RUN ./configure && \
         make clean && \
         make
 
-FROM ubuntu:bionic
-WORKDIR /circle-3.1
-COPY --from=build /circle-3.1 .
+FROM ubuntu:noble
+WORKDIR /tbamud
+COPY --from=build /tbamud .
 EXPOSE 4000
-VOLUME /circle-3.1/lib
+VOLUME /tbamud/lib
 CMD [ "./autorun.sh" ]

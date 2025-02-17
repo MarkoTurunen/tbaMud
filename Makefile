@@ -1,14 +1,14 @@
 all: build
 
 build:
-	docker build -t circlemud:3.1 .
+	docker build -t tbamud:latest .
 
 start:
-	docker run -d --rm -v circlemud-data:/circle-3.1/lib --name circlemud -p 4000:4000 circlemud:3.1
+	docker run -d --rm -v circlemud-data:/tbamud/lib --name tbamud -p 4000:4000 tbamud:latest
 
 stop:
-	docker kill circlemud
+	docker kill tbamud
 
 clean:
-	docker kill circlemud
+	docker kill tbamud
 	docker volume rm circlemud-data
