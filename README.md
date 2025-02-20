@@ -3,15 +3,20 @@ tba MUD Docker Image
 
 ## Building
 ```bash
-docker build -t tbamud:latest .
+make build
 ```
 
 ## Running
 ```bash
-docker run -d --rm -v circlemud-data:/tbamud/lib --name tbamud -p 4000:4000 tbamud:latest
+make start
 ```
 
 ## Accessing tba MUD
 ```bash
 telnet localhost 4000
+```
+
+## Stopping
+```bash
+make stop
 ```
