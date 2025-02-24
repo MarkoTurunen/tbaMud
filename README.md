@@ -11,9 +11,9 @@ make build
 make start
 ```
 
-## Accessing tba MUD
+## Playing tbaMUD
 ```bash
-telnet localhost 4000
+make play
 ```
 
 ## Stopping

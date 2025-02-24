@@ -1,3 +1,6 @@
 [submodule "tbamud"]
 	path = tbamud
 	url = https://github.com/tbamud/tbamud.git
+[submodule "tintin"]
+	path = tintin
+	url = https://github.com/scandum/tintin.git
